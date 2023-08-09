@@ -1,7 +1,7 @@
 APP = jobboard
 PREFIX = python ${APP}/manage.py
 
-.PHONY: migrations migrate server superuser %-req
+.PHONY: migrations migrate server superuser %-req shell
 
 migrations:
 	${PREFIX} makemigrations
@@ -17,3 +17,6 @@ superuser:
 
 %-req:
 	pip freeze > ${APP}/requirements/$*.txt
+
+shell:
+	${PREFIX} shell
