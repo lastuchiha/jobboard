@@ -1,20 +1,8 @@
 from pathlib import Path
-import os
-from django.core.exceptions import ImproperlyConfigured
+from jobboard.utils.get_env_or_exception import get_env_or_exception
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
-
-def get_env_or_exception(var_name):
-    """
-    Return environment variable if exists otherwise returns an Exception
-    """
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        err_msg = "Set the {0} environment variable".format(var_name)
-        raise ImproperlyConfigured(err_msg)
-
 
 SECRET_KEY = get_env_or_exception("SECRET_KEY")
 
@@ -28,7 +16,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ["celery"]
 
 LOCAL_APPS = ["jobs"]
 
