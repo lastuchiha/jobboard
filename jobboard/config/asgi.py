@@ -12,7 +12,7 @@ import os
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault(
-    "DJANGO_SETTINGS_MODULE", f"jobboard.settings.{os.environ.get('DJANGO_ENV', 'dev')}"
+    "DJANGO_SETTINGS_MODULE", f"config.settings.{os.environ.get('DJANGO_ENV', 'dev')}"
 )
 
 application = get_asgi_application()

@@ -1,4 +1,4 @@
-from jobboard.utils.get_env_or_exception import get_env_or_exception
+from utils.get_env_or_exception import get_env_or_exception
 
 DATABASES = {
     "default": {

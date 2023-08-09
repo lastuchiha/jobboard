@@ -8,7 +8,7 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault(
         "DJANGO_SETTINGS_MODULE",
-        f"jobboard.settings.{os.environ.get('DJANGO_ENV', 'dev')}",
+        f"config.settings.{os.environ.get('DJANGO_ENV', 'dev')}",
     )
     try:
         from django.core.management import execute_from_command_line

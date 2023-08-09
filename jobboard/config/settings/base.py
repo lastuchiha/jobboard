@@ -1,5 +1,5 @@
 from pathlib import Path
-from jobboard.utils.get_env_or_exception import get_env_or_exception
+from utils.get_env_or_exception import get_env_or_exception
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -18,7 +18,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = ["celery"]
 
-LOCAL_APPS = ["jobs"]
+LOCAL_APPS = ["jobboard.jobs"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -32,7 +32,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "jobboard.urls"
+# Changes to work with modified project structure
+APPS_DIR = BASE_DIR / "jobboard"
+ROOT_URLCONF = "config.urls"
+WSGI_APPLICATION = "config.wsgi.application"
 
 TEMPLATES = [
     {
@@ -49,8 +52,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = "jobboard.wsgi.application"
 
 
 DATABASES = {
