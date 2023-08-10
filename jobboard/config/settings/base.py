@@ -16,7 +16,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["celery"]
+THIRD_PARTY_APPS = ["celery", "django_celery_beat"]
 
 LOCAL_APPS = ["jobboard.jobs"]
 
