@@ -1,6 +1,5 @@
 from celery import shared_task
-
-# from jobboard.scraper import scrapper
+from jobboard.scraper import jobscraper
 
 
 @shared_task

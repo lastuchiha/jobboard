@@ -18,7 +18,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = ["celery", "django_celery_beat"]
 
-LOCAL_APPS = ["jobboard.jobs"]
+LOCAL_APPS = ["jobboard.jobs", "rest_framework"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
